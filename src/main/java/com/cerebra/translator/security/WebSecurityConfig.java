@@ -20,10 +20,6 @@ import javax.servlet.http.HttpServletResponse;
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    public static final String ADMIN_ROLE = Roles.ADMIN.name();
-    public static final String USER_ROLE = Roles.USER.name();
-
-
     private final JwtTokenProvider jwtTokenProvider;
 
 
