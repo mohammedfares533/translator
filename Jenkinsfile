@@ -56,7 +56,7 @@ pipeline {
 			steps {
 				echo 'Start running the application ...'
 				sh """
-					docker run -p 9025:9025 -e EUREKA_SERVER=http://eureka:8761/eureka -e ACTIVE_PROFILE=dev -d --name translator-gateway translator-gateway
+					docker run -p 9025:9025 -e EUREKA_SERVER=http://eureka:8762/eureka -e ACTIVE_PROFILE=dev -d --name translator-gateway translator-gateway
 				"""
 				echo 'End running the application ...'
 			}
