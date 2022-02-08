@@ -31,7 +31,7 @@ public class CustomUserDetails implements UserDetails {
         this.grantedAuthorities = AuthorityUtils.createAuthorityList(authority);
     }
 
-    public CustomUserDetails(String username, String[] authorities) {
+    public CustomUserDetails(String username, String authorities) {
         this.username = username;
         this.grantedAuthorities = AuthorityUtils.createAuthorityList(authorities);
     }

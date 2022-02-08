@@ -18,7 +18,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Base64;
 import java.util.Date;
-import java.util.List;
 import java.util.function.Function;
 
 @Component
@@ -102,15 +101,15 @@ public class JwtTokenProvider {
 
     public UserDetails getUserDetails(String token) {
         String userName = getUsername(token);
-        List<String> roleList = getRoleList(token);
-        return new CustomUserDetails(userName, roleList.toArray(new String[0]));
+        String roleList = getRoleList(token);
+        return new CustomUserDetails(userName, roleList);
     }
 
-    public List<String> getRoleList(String token) {
+    public String getRoleList(String token) {
 
-        List<String> roles = null;
+        String roles = null;
         try {
-            roles = (List<String>) Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody().get(props.getRulesParameterName());
+            roles = (String) Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody().get(props.getRulesParameterName());
         } catch (ExpiredJwtException | SignatureException e) {
             log.error(" Token expired ");
             log.error(e);
