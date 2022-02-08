@@ -45,7 +45,7 @@ pipeline {
 				echo 'Start building the application ...'
 				echo 'workspace directory'
 				sh """
-					pwd && docker build -t broker .
+					pwd && docker build -t translator-gateway .
 				"""
 				echo 'End building the application ...'
 			}
