@@ -1,12 +1,5 @@
 package com.cerebra.translator.service;
 
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
-import com.amazonaws.services.translate.AmazonTranslate;
-import com.amazonaws.services.translate.AmazonTranslateClient;
-import com.amazonaws.services.translate.model.TranslateTextRequest;
-import com.amazonaws.services.translate.model.TranslateTextResult;
 import com.cerebra.translator.dto.request.LoginRequestDTO;
 import com.cerebra.translator.exception.ApiException;
 import com.cerebra.translator.model.SystemUser;
