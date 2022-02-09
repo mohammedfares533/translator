@@ -42,6 +42,9 @@ public class SystemUser {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Column(name = "EMAIL")
+    private String email;
+
     @Column(name = "Is_Active")
     private boolean active = true;
 
